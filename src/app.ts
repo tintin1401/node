@@ -1,4 +1,9 @@
 import { MongoDataBase } from "./data/mongo"
+
+(async () => {
+        await main();
+   
+})();
 async function main() {
     
     await MongoDataBase.connect({
