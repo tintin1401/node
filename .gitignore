@@ -2,7 +2,7 @@ node_modules/
 
 .env
 
-mongo/
+/mongo/
 
 mongo/diagnostics.data
 mongo/collection-2-1400284833412950963
