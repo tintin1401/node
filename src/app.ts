@@ -1,4 +1,4 @@
-import { LogModel, MongoDataBase } from "./data/mongo"
+import { LogModel, MongoDataBase } from "./data/mongoModels"
 
 (async () => {
         await main();
