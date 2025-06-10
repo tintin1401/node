@@ -1,4 +1,4 @@
-import { LogModel, MongoDataBase } from "./data/mongoModels"
+import { LogModel, MongoDataBase , UserModel} from "./data/mongoModels"
 
 (async () => {
         await main();
@@ -10,6 +10,20 @@ async function main() {
         mongoUrl: 'mongodb://usuario:12345@localhost:27018',
         dbName: 'EntrenoYA'
     });
+
+    const user = await UserModel.create({
+        name: "John Doe",
+        email: "aBj0T@example.com",
+        password: "password123",
+        role: "client",
+        fullName: "John Doe",
+        phone: "1234567890",
+    });
+
+    await user.save();
+    console.log(user);
+
+
 
     /*
     Create a new log entry

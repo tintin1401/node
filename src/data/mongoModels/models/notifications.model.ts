@@ -3,6 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const notificationSchema = new mongoose.Schema({
     trainerId:{
         type: Schema.Types.ObjectId,
+        ref: "User",
         required: true
     },
     userId: {
@@ -19,9 +20,9 @@ const notificationSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: new Date(),
+        default: Date.now,
       },
  
 });
 
-export const ReservationModel = mongoose.model("Notification", notificationSchema);
+export const NotificationModel = mongoose.model("Notification", notificationSchema);

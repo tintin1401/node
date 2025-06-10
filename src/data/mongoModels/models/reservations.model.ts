@@ -4,10 +4,12 @@ const reservationSchema = new mongoose.Schema({
   userId: {
     type: Schema.Types.ObjectId,
     required: true,
+    ref: "User",
   },
   trainerId: {
     type: Schema.Types.ObjectId,
     required: true,
+    ref: "User",
   },
   date: {
     type: String,
@@ -28,7 +30,7 @@ const reservationSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: new Date(),
+    default:  Date.now,
   },
 });
 
