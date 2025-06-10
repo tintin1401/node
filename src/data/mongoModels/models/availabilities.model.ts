@@ -3,10 +3,6 @@ import { UserModel } from "./user.model";
 
 
 const availabilitiesSchema = new mongoose.Schema({
-  _id: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-  },
   trainerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

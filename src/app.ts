@@ -1,4 +1,4 @@
-import { LogModel, MongoDataBase , UserModel} from "./data/mongoModels"
+import { LogModel, MongoDataBase , UserModel, AvailabilitiesModel, ReservationModel, NotificationModel} from "./data/mongoModels"
 
 (async () => {
         await main();
@@ -11,17 +11,49 @@ async function main() {
         dbName: 'EntrenoYA'
     });
 
-    const user = await UserModel.create({
-        name: "John Doe",
-        email: "aBj0T@example.com",
-        password: "password123",
-        role: "client",
-        fullName: "John Doe",
-        phone: "1234567890",
+    // const user = await UserModel.create({
+    //     fullName: "Carlos Trainer",
+    //     email: "trainerfit@trainerfit.com",
+    //     password: "password123",
+    //     role: "trainer",
+    //     phone: "876780981",
+    // });
+
+    // await user.save();
+    // console.log(user);
+
+    // const availabilities = await AvailabilitiesModel.create({
+    //     trainerId: "684785fc220beea7d78f25bb", //verdadero id de un trainer
+    //     date: new Date("2023-10-01"),
+    //     times: ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"],
+    // });
+
+    // await availabilities.save();
+    // console.log(availabilities);
+
+    // const reservation = await ReservationModel.create({
+    //     userId: "6847853c3330b4d69b4d5765", //verdadero id de un cliente
+    //     trainerId: "684785fc220beea7d78f25bb", //verdadero id de un trainer
+    //     date: "2023-10-01",
+    //     time: "08:00",
+    //     status: "pending",
+    //     paymentMethod: "sinpe",
+    //     createdAt: new Date(),
+    // });
+
+    // await reservation.save();
+    // console.log(reservation);
+
+    const notification = await NotificationModel.create({
+        trainerId: "684785fc220beea7d78f25bb", //verdadero id de un trainer
+        userId: "6847853c3330b4d69b4d5765", //verdadero id de un cliente
+        message: "Tu reserva ha sido confirmada para el 1 de octubre a las 08:00",
+        isRead: false,
+        createdAt: new Date(),
     });
 
-    await user.save();
-    console.log(user);
+    await notification.save();
+    console.log(notification);
 
 
 
