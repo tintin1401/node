@@ -1,5 +1,5 @@
 import app from './app';
-import { MongoDataBase, UserModel } from './data/mongoModels';
+import { MongoDataBase, UserModel } from './data';
 
 const PORT = process.env.PORT || 3000;
 
