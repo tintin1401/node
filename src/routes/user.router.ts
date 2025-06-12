@@ -4,7 +4,7 @@ import { getUsers } from '../controllers/user.controller';
 const router = express.Router();
 
 // Example Express route
-router.get('/fullname/:fullName', getUsers);
+router.post('/find', getUsers);
 
 
 export default router;

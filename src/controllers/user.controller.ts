@@ -4,8 +4,13 @@ import {UserModel} from "../data/"
 // Obtener todos los usuarios
 export const getUsers = async (req: Request, res: Response): Promise<void> => {
  try {
-    const { fullName } = req.params; // or req.query/fullName if sent as a query param
-    const user = await UserModel.findOne({ fullName });
+    const { fullName, email } = req.body; // Add more attributes as needed
+    const filter: any = {};
+    if (fullName) filter.fullName = fullName;
+    if (email) filter.email = email;
+
+    const user = await UserModel.findOne(filter);
+    
     if (!user) {
       res.status(404).json({ error: 'Usuario no encontrado' });
       return;
