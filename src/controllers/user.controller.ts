@@ -13,7 +13,6 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
     
     if (!user) {
       res.status(404).json({ error: 'Usuario no encontrado' });
-      return;
     }
     res.json(user);
   } catch (error) {
