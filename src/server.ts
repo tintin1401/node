@@ -10,11 +10,11 @@ const PORT = process.env.PORT || 3000;
   });
 
   // const user = await UserModel.create({
-  //       fullName: "Carlos Trainer",
-  //       email: "trainerfit@trainerfit.com",
+  //       fullName: "Joze Zamora",
+  //       email: "josezamora@aeteme.com",
   //       password: "password123",
-  //       role: "trainer",
-  //       phone: "876780981",
+  //       role: "client",
+  //       phone: "898898989899",
   //   });
 
   //   await user.save();
