@@ -52,19 +52,21 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     }
 }
 
+//
+
 export const isTrainer = async (userData: { fullName: string, email: string, role: string }) => {
     try {
         const { fullName, email, role } = userData;
         const isTrainer = await UserModel.findOne({
             fullName, 
             email, 
-            role: 'trainer' // Check if the user is a trainer
+            role,
         });
 
-        if (isTrainer) {
-           return false; 
+        if (isTrainer && isTrainer.role === 'trainer') {
+          return true;
         } else {
-            return true;
+          return false;
         }
     } catch (error) {
         console.error('Error checking if is trainer:', error);

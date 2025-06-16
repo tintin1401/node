@@ -6,6 +6,7 @@ const router = express.Router();
 // Example Express route
 router.post('/find', getUsers);
 router.post('/register', register);
+router.post('/isTrainer', isTrainer);
 
 
 export default router;
