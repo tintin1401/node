@@ -1,12 +1,13 @@
 import express from 'express'; //npm install --save-dev @types/express { if u use typescript you need eject this line in the console. }
 import userRouter from './routes/user.router'; // Import the user router
 import reservationRouter from './routes/reservation.router'; // Import the reservation router
-
+import notificationRouter from './routes/notification.route'; // Import the notification router
 const app = express();
 
 app.use(express.json()); // Middleware to parse JSON bodies
 app.use('/users', userRouter);
 app.use('/reservations', reservationRouter); // Use the reservation router
+app.use('/notifications', notificationRouter); // Use the notification router
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
