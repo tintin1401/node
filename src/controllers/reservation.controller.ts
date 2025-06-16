@@ -1,4 +1,5 @@
-import e, { Request, Response } from 'express';
+import { Request, Response } from 'express';
+import {isTrainer} from './user.controller';
 import { ReservationModel } from '../models/reservations.model';
 
 // Obtener todas las reservas
@@ -15,7 +16,12 @@ export const getReservations = async (req: Request, res: Response): Promise<void
 export const createReservation = async (req: Request, res: Response): Promise<void> => {
     try {
         const reservationData = req.body;
-        const availability: boolean | undefined = await isReservationAvailable(reservationData);
+        const isTrainerUser = await isTrainer(reservationData);
+        if (!isTrainerUser) {
+            res.status(400).json({ error: 'El usuario no es un entrenador' });
+            return;
+        }
+        const availability = await isReservationAvailable(reservationData);
         if (!availability) {
             res.status(400).json({ error: 'La reserva ya está ocupada' });
             return;
