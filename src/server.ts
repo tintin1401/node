@@ -9,16 +9,16 @@ const PORT = process.env.PORT || 3000;
     dbName: 'EntrenoYA'
   });
 
-//   const user = await UserModel.create({
-//         fullName: "Carlos Trainer",
-//         email: "trainerfit@trainerfit.com",
-//         password: "password123",
-//         role: "trainer",
-//         phone: "876780981",
-//     });
+  // const user = await UserModel.create({
+  //       fullName: "Carlos Trainer",
+  //       email: "trainerfit@trainerfit.com",
+  //       password: "password123",
+  //       role: "trainer",
+  //       phone: "876780981",
+  //   });
 
-//     await user.save();
-//     console.log(user);
+  //   await user.save();
+  //   console.log(user);
 
 
 
